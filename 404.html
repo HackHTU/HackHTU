@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="/style/vars.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            font-family: var(--font-family);
+            text-align: center;
+        }
+        .container {
+            padding: 2em;
+            backdrop-filter: var(--blur);
+            border-radius: 20px;
+        }
+        .container:hover {
+            backdrop-filter: none;
+        }
+        
+        h1 {
+            font-size: 4em;
+            font-weight: var(--font-h-weight);
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: var(--font-p-weight);
+        }
+
+        a {
+            color: var(--b);
+            text-decoration: none;
+            font-weight: var(--font-h-weight);
+            transition: color var(--animation-time);
+        }
+
+        a:hover {
+            color: var(--r);
+        }
+
+        @media (min-width: 720px) {
+            body {
+                background-image: url("https://api.anosu.top/img?sort=setu&size=1080p");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        @media (max-width: 720px) {
+            body {
+                background-image: url("https://api.anosu.top/img?sort=setu&size=720p");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops! - 404</h1>
+        <p>抱歉，页面未找到，但找到了一张涩图。</p>
+        <p><a href="/">返回首页</a></p>
+        <p><a href="/404.html">换一张</a>  <a href="https://moe.jitsu.top/img?sort=r18">来个真的(Pixiv, 18+)</a></p>
+        <p><small>Powered By <a href="https://img.jitsu.top/#/instruction/">随机涩图 API</a></small></p>
+    </div>
+</body>
+</html>

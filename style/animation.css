@@ -1,0 +1,157 @@
+/* nav animation */
+@keyframes nav-animation {
+  from {
+    width: 10%;
+    opacity: 0;
+  }
+}
+
+nav {
+  animation: nav-animation var(--animation-time) var(--spring-animation-function) backwards;
+  overflow: hidden;
+}
+
+/* li hover animation */
+.nav-list li::after,
+#footer li::after {
+  transition: all var(--animation-time) var(--spring-animation-function);
+  content: "";
+  width: 0;
+}
+
+.nav-list li:hover,
+#footer li:not(:first-child):hover {
+  filter: invert(1);
+}
+
+.nav-list li:hover:after,
+#footer li:not(:first-child):hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 1px;
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+
+/* card animation */
+@keyframes animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animation-bg-trans {
+  from {
+    background-position: right top, left bottom;
+    opacity: 0;
+  }
+}
+
+/* default behavior */
+svg [id^="r"],
+[id^="g"] {
+  animation: animation-fadeIn 1s 1 both;
+  animation-play-state: paused;
+}
+
+.card3-bg {
+  animation: animation-bg-trans 1s 1 both;
+  animation-play-state: paused;
+}
+
+#r1 {
+  animation-delay: 0s;
+}
+
+#r2 {
+  animation-delay: 0.25s;
+}
+
+#r3 {
+  animation-delay: 0.5s;
+}
+
+#r-btn,
+#r-btn-text {
+  animation-delay: 1s;
+}
+
+#r-ok-bg {
+  animation-delay: 1.5s;
+}
+
+#r-ok {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: animation-dash 1s 2s 1 forwards;
+}
+
+#g-text1,
+#g-text2,
+#g-text3,
+#g-text4,
+#g-text5 {
+  animation-delay: 0.5s;
+}
+
+#g-ok,
+#g-ok-bg,
+#g-ok-btn {
+  animation-delay: 1s;
+}
+
+#g-ok,
+#g-ok-btn,
+#g-text {
+  animation-delay: 1.5s;
+}
+
+/* trigger */
+.main-card1:hover [id^="r"],
+.main-card2:hover [id^="g"],
+.main-card3:hover .card3-bg {
+  animation-play-state: running;
+}
+
+/* button hover */
+.all-tools>* {
+  transition: all var(--animation-time) var(--spring-animation-function);
+}
+
+.all-tools>*:hover {
+  transform: translateY(-10px);
+}
+
+/* card4 style */
+.main-card4::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: conic-gradient(from 0deg at 50% 50%, var(--b) 0deg, var(--r) 120deg, var(--g) 240deg, var(--b) 360deg);
+  animation: animation-card4 5s linear infinite;
+  filter: blur(5px);
+  z-index: -1;
+  scale: 3.0;
+}
+
+@keyframes animation-card4 {
+  to {
+    rotate: 360deg;
+  }
+}

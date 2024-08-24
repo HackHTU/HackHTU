@@ -1,0 +1,137 @@
+      /* 全局样式 */
+      html, body {
+        height: 100%;
+        margin: 0 5px;
+        padding: 0;
+        
+        font-family: "Mulish", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+
+        /* 页眉样式 */
+      .header {
+        display: flex;
+        align-items: center;
+        margin: 0 10%;
+        padding: 10px 10px;
+        color: #black;
+        font-weight: 600;
+      }
+
+      .header .logo {
+        width: 20vw;
+      }
+      
+      .header .title {
+        margin-left: auto;
+        font-size: 2.5vw;
+      }
+
+      /* 主体部分样式 */
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .work {
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+        margin: 10px;
+        text-align: center;
+        border: 0.5px solid #CCCCCC;
+        border-radius: 20px;
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+      }
+      
+      .work .element {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center; 
+        padding: 10px 0;
+        width: 100%;
+        margin: 0 0;
+      }
+      
+      footer {
+        background: #E8EFF0;
+        color: rgba(0, 0, 0, 0.3);
+        text-align: center;
+        font-size: small;
+        padding: 10px 0;
+        margin: 0;
+        flex-shrink: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .module {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* 允许卡片换行 */
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      /* 卡片样式 */
+      .card {
+        width: 40%; /* 调整卡片宽度 */
+        background-color: #f0f0f0;
+        margin: 20px 5px;
+        padding: 20px 5px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      
+      .card.water {
+        background-color: #66CC99;
+      }
+      .card.wash {
+        background-color: #6699CC;
+      }
+      
+      /* 卡片标题 */
+      .card h3 {
+        margin-top: 0;
+        color: #fff;
+      }
+      
+      /* 下载按钮 */
+      .card button {
+        background-color: #fff;
+        color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      /* 鼠标悬停样式 */
+      .card button:hover {
+        background-color: #e0e0e0;
+      }
+      
+      /* 边框文本样式 */
+      .border-text {
+        color: white;
+        display: block;
+        padding: 10px 20px;
+        border-radius: 10px; /* 圆角 */
+        position: relative; /* 相对定位 */
+        text-align: center;
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+      }
+      
+      

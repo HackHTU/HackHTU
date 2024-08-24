@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html data-appversion="4.8.5.0" data-culture="zh-CN" lang="zh">
+<head>
+
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="preload" href="modules/fonts/material-icons/ms_2024_03.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="manifest" href="manifest.json">
+    <meta name="description" content="StarCat - Flare">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <meta http-equiv="X-UA-Compatibility" content="IE=Edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="StarCat - Flare">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta property="og:title" content="StarCat - Flare">
+    <meta property="og:site_name" content="StarCat - Flare">
+    
+    <meta property="og:description" content="Energize your media.">
+    <meta property="og:type" content="article">
+    
+    
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="384x384" href="images/icon-384x384.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512x512.png">
+    <link rel="apple-touch-startup-image" href="images/splash.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="msapplication-TileImage" content="images/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="theme-color" content="#43A047">
+
+    <script type="importmap">
+        {
+          "imports": {
+            "medialibraryeditor": "./components/medialibraryeditor/medialibraryeditor.js",
+            "medialibrarycreator": "./components/medialibrarycreator/medialibrarycreator.js",
+            "taskButton": "./components/taskbutton.js",
+            "itemShortcuts": "./modules/shortcuts.js",
+            "pageJs": "./modules/pagejs/page.js",
+            "howler": "./modules/howlerjs/howler.core.js",
+            "skinManager": "./modules/skinmanager.js",
+            "playQueueManager": "./modules/common/playback/playqueuemanager.js",
+            "playbackManager": "./modules/common/playback/playbackmanager.js",
+            "focusManager": "./modules/focusmanager.js",
+            "browserdeviceprofile": "./modules/browserdeviceprofile.js",
+            "events": "./modules/emby-apiclient/events.js",
+            "connectionManager": "./modules/emby-apiclient/connectionmanager.js",
+            "ApiClient": "./modules/emby-apiclient/apiclient.js",
+            "loading": "./modules/loading/loading.js",
+            "webvtt": "./modules/webvtt/vtt.js",
+            "humanedate": "./modules/humanedate/humanedate.js",
+            "serviceLocator": "./modules/common/servicelocator.js",
+            "globalize": "./modules/common/globalize.js",
+            "datetime": "./modules/common/datetime.js",
+            "backdrop": "./modules/backdrop/backdrop.js",
+            "qualityOptions": "./modules/common/qualityoptions.js",
+            "pluginManager": "./modules/common/pluginmanager.js",
+            "dataFormatter": "./modules/common/dataformatter.js",
+            "itemHelper": "./modules/common/itemhelper.js",
+            "itemManager": "./modules/common/itemmanager/itemmanager.js",
+            "BaseItemController": "./modules/common/itemmanager/baseitemcontroller.js",
+            "recordingHelper": "./modules/common/recordinghelper.js",
+            "imageLoader": "./modules/common/imagehelper.js",
+            "imageHelper": "./modules/common/imagehelper.js",
+            "gamepadtokey": "./modules/input/gamepadtokey.js",
+            "virtual-scroller": "./modules/virtual-scroller/virtual-scroller.js",
+            "commandProcessor": "./modules/commandprocessor.js",
+            "cssVars": "./modules/css-vars-ponyfill/css-vars-ponyfill.js",
+            "browser": "./modules/browser.js",
+            "backMenu": "./modules/backmenu/backmenu.js",
+            "soundEffectsManager": "./modules/soundeffects/soundeffectsmanager.js",
+            "soundEffectsPlayer": "./modules/soundeffects/soundeffectsplayer.js",
+            "mediaSession": "./modules/playback/mediasession.js",
+            "mainTabsManager": "./modules/maintabsmanager.js",
+            "dragDropTouch": "./modules/polyfills/dragdroptouch.js",
+            "appHeader": "./modules/appheader/appheader.js",
+            "chromecastHelper": "./modules/chromecast/chromecasthelpers.js",
+            "directorybrowser": "./modules/directorybrowser/directorybrowser.js",
+            "metadataEditor": "./modules/metadataeditor/metadataeditor.js",
+            "personEditor": "./modules/metadataeditor/personeditor.js",
+            "playerSelectionMenu": "./modules/playback/playerselection.js",
+            "playerSettingsMenu": "./modules/playback/playersettingsmenu.js",
+            "emby-collapse": "./modules/emby-elements/emby-collapse/emby-collapse.js",
+            "emby-button": "./modules/emby-elements/emby-button/emby-button.js",
+            "emby-linkbutton": "./modules/emby-elements/emby-button/emby-button.js",
+            "emby-itemscontainer": "./modules/emby-elements/emby-itemscontainer/emby-itemscontainer.js",
+            "alphaNumericShortcuts": "./modules/alphanumericshortcuts/alphanumericshortcuts.js",
+            "emby-dialogclosebutton": "./modules/emby-elements/emby-dialogclosebutton/emby-dialogclosebutton.js",
+            "emby-scroller": "./modules/emby-elements/emby-scroller/emby-scroller.js",
+            "emby-tabs": "./modules/emby-elements/emby-tabs/emby-tabs.js",
+            "emby-scrollbuttons": "./modules/emby-elements/emby-scrollbuttons/emby-scrollbuttons.js",
+            "emby-progressring": "./modules/emby-elements/emby-progressring/emby-progressring.js",
+            "emby-itemrefreshindicator": "./modules/emby-elements/emby-itemrefreshindicator/emby-itemrefreshindicator.js",
+            "multiSelect": "./modules/multiselect/multiselect.js",
+            "alphaPicker": "./modules/alphapicker/alphapicker.js",
+            "paper-icon-button-light": "./modules/emby-elements/emby-button/paper-icon-button-light.js",
+            "tabbedView": "./modules/tabbedview/tabbedview.js",
+            "itemsTab": "./modules/tabbedview/itemstab.js",
+            "baseView": "./modules/viewmanager/baseview.js",
+            "baseTab": "./modules/tabbedview/basetab.js",
+            "ListPage": "./list/list.js",
+            "connectHelper": "./modules/emby-connect/connecthelper.js",
+            "addToList": "./modules/addtolist/addtolist.js",
+            "ItemAccessDialog": "./modules/itemaccessdialog/itemaccessdialog.js",
+            "dom": "./modules/dom.js",
+            "textEncoding": "./modules/common/textencoding.js",
+            "playerStats": "./modules/playerstats/playerstats.js",
+            "subtitleOffsetOverlay": "./modules/subtitleoffsetoverlay/subtitleoffsetoverlay.js",
+            "subtitleAppearanceHelper": "./modules/common/subtitleappearancehelper.js",
+            "recordingEditor": "./modules/recordingcreator/recordingeditor.js",
+            "seriesRecordingEditor": "./modules/recordingcreator/seriesrecordingeditor.js",
+            "recordingFields": "./modules/recordingcreator/recordingfields.js",
+            "recordingButton": "./modules/recordingcreator/recordingbutton.js",
+            "subtitleEditor": "./modules/subtitleeditor/subtitleeditor.js",
+            "itemIdentifier": "./modules/itemidentifier/itemidentifier.js",
+            "imageEditor": "./modules/imageeditor/imageeditor.js",
+            "imageDownloader": "./modules/imagedownloader/imagedownloader.js",
+            "itemContextMenu": "./modules/itemcontextmenu.js",
+            "emby-input": "./modules/emby-elements/emby-input/emby-input.js",
+            "emby-select": "./modules/emby-elements/emby-select/emby-select.js",
+            "emby-multilineselect": "./modules/emby-elements/emby-multilineselect/emby-multilineselect.js",
+            "emby-slider": "./modules/emby-elements/emby-slider/emby-slider.js",
+            "emby-checkbox": "./modules/emby-elements/emby-checkbox/emby-checkbox.js",
+            "emby-progressbar": "./modules/emby-elements/emby-progressbar/emby-progressbar.js",
+            "emby-radio": "./modules/emby-elements/emby-radio/emby-radio.js",
+            "emby-toggle": "./modules/emby-elements/emby-toggle/emby-toggle.js",
+            "emby-textarea": "./modules/emby-elements/emby-textarea/emby-textarea.js",
+            "emby-downloadbutton": "./modules/emby-elements/sync/emby-downloadbutton.js",
+            "emby-playstatebutton": "./modules/emby-elements/userdatabuttons/emby-playstatebutton.js",
+            "emby-ratingbutton": "./modules/emby-elements/userdatabuttons/emby-ratingbutton.js",
+            "guide-settings-dialog": "./modules/emby-elements/guide/guide-settings.js",
+            "tvguide": "./modules/emby-elements/guide/guide.js",
+            "emby-premierecontainer": "./modules/emby-elements/emby-premierecontainer/emby-premierecontainer.js",
+            "serverRestartDialog": "./modules/serverrestartdialog/serverrestartdialog.js",
+            "channelRecordingCreator": "./modules/recordingcreator/channelrecordingcreator.js",
+            "homeSections": "./modules/homesections/homesections.js",
+            "refreshDialog": "./modules/refreshdialog/refreshdialog.js",
+            "cardBuilder": "./modules/cardbuilder/cardbuilder.js",
+            "mouseManager": "./modules/input/mouse.js",
+            "keyboardManager": "./modules/input/keyboard.js",
+            "loadingDialog": "./modules/loadingdialog/loadingdialog.js",
+            "syncDialog": "./modules/sync/sync.js",
+            "syncJobEditor": "./modules/sync/syncjobeditor.js",
+            "morphdom": "./modules/morphdom/morphdom.js",
+            "viewManager": "./modules/viewmanager/viewmanager.js",
+            "responseHelper": "./modules/common/responsehelper.js",
+            "formHelper": "./modules/common/responsehelper.js",
+            "slideshow": "./modules/slideshow/slideshow.js",
+            "listView": "./modules/listview/listview.js",
+            "indicators": "./modules/indicators/indicators.js",
+            "mediaInfo": "./modules/mediainfo/mediainfo.js",
+            "viewSettings": "./modules/viewsettings/viewsettings.js",
+            "filterMenu": "./modules/filtermenu/filtermenu.js",
+            "genericedit": "./modules/genericedit/genericedit.js",
+            "registrationServices": "./modules/registrationservices/registrationservices.js",
+            "serversync": "./modules/sync/serversync.js",
+            "multiserversync": "./modules/sync/multiserversync.js",
+            "scroller": "./modules/scroller/smoothscroller.js",
+            "toast": "./modules/toast/toast.js",
+            "layoutManager": "./modules/layoutmanager.js",
+            "appSettings": "./modules/common/appsettings.js",
+            "userSettings": "./modules/common/usersettings/usersettings.js",
+            "userSettingsBuilder": "./modules/common/usersettings/usersettingsbuilder.js",
+            "imageUploader": "./modules/imageuploader/imageuploader.js",
+            "dockedTabs": "./modules/dockedtabs/dockedtabs.js",
+            "navdrawer": "./modules/navdrawer/navdrawer.js",
+            "navDrawerContent": "./modules/navdrawer/navdrawercontent.js",
+            "queryString": "./modules/common/querystring.js",
+            "alert": "./modules/common/dialogs/alert.js",
+            "confirm": "./modules/common/dialogs/confirm.js",
+            "dialog": "./modules/dialog/dialog.js",
+            "dialogHelper": "./modules/dialoghelper/dialoghelper.js",
+            "prompt": "./modules/prompt/prompt.js",
+            "screensaverManager": "./modules/screensavermanager.js",
+            "serverNotifications": "./modules/common/input/api.js",
+            "headroom": "./modules/headroom/headroom.js",
+            "appFooter": "./modules/appfooter/appfooter.js",
+            "appRouter": "./modules/approuter.js",
+            "actionsheet": "./modules/actionsheet/actionsheet.js",
+            "multi-download": "./modules/multidownload.js",
+            "localassetmanager": "./modules/localdatabase/localassetmanager.js",
+            "inputManager": "./modules/common/inputmanager.js"
+          }
+        }
+    </script>
+
+    <title>StarCat - Flare</title>
+
+    <style>
+        .app-splash-container {
+            background-color: #000;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            contain: strict;
+            content-visibility: auto;
+        }
+
+        .app-splash {
+            background-image: url(modules/themes/logowhite.png);
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: fixed;
+            top: 1.8em;
+            left: .9em;
+            width: 6.6em;
+            height: 2em;
+            contain: strict;
+            content-visibility: auto;
+            z-index: 99999;
+        }
+
+        .app-splash-expanded {
+            top: 30%;
+            left: 30%;
+            right: 30%;
+            height: 20%;
+            width: auto;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        @media (orientation: landscape) {
+
+            .app-splash-expanded {
+                left: 37.5%;
+                right: 37.5%;
+            }
+        }
+    </style>
+
+</head>
+<body class="mainAnimatedPages skinBody">
+    <div class="backdropContainer"></div>
+    <div class="backgroundContainer"></div>
+    <div class="mainDrawer hide focuscontainer padded-bottom-page" is="emby-scroller" data-miniscrollbar="true" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-bindheader="false">
+        <div class="scrollSlider mainDrawerScrollSlider"></div>
+    </div>
+    <div class="skinHeader focuscontainer-x focuscontainer-up headroom flex align-items-center flex-grow headerTop">
+        <div class="headerLeft headerSection">
+        </div>
+        <div class="headerMiddle headerSection sectionTabs">
+        </div>
+        <div class="headerRight headerSection focuscontainer-right">
+        </div>
+    </div>
+
+    <div class="app-splash-container">
+        <div class="app-splash app-splash-expanded"></div>
+    </div>
+    
+    <script src="apploader.js?v=4.8.5.0" defer></script>
+</body>
+</html>

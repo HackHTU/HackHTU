@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>假条制作器 - Hack HTU</title>
+    <style>
+        @import url("/style/vars.css");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            width: 100vw;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        nav {
+            width: 100%;
+            text-align: center;
+            background-color: var(--nav-bg-color);
+            border-radius: 20px;
+            margin: 0 1em;
+            padding: 0.5em 0;
+            position: sticky;
+            top: 0.5em;
+            color: var(--primary-color);
+            backdrop-filter: var(--blur);
+            z-index: 999;
+        }
+
+        main {
+            margin: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .notice {
+            width: 100%;
+            padding: 2em 1em 1em 1em;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        .container {
+            border: 1px solid;
+            margin: 0 1em;
+            padding: 1em;
+            width: 90%;
+            border-bottom-left-radius: 2em;
+            border-bottom-right-radius: 2em;
+        }
+
+        .container p {
+            margin: 1em 0;
+            padding: 1em;
+            background-color: blanchedalmond;
+            color: black;
+        }
+
+        .container p::first-letter {
+            font-size: 2em;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            background-color: aliceblue;
+            color: var(--primary-color);
+            outline: none;
+            border: none;
+            border-radius: 0.5em;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group input::placeholder {
+            color: cornflowerblue;
+        }
+
+        .third-action {
+            display: none;
+        }
+
+        .tabs {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: var(--secondary-color);
+        }
+
+        .tab:first-child {
+            border-top-left-radius: 2em;
+            border-bottom-left-radius: 2em;
+        }
+
+        .tab:last-child {
+            border-top-right-radius: 2em;
+            border-bottom-right-radius: 2em;
+        }
+
+        .tab.active {
+            background-color: var(--b);
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        #preview {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 1em;
+            border: none;
+            border-radius: 2em;
+            background-color: var(--g);
+            color: var(--primary-color);
+            box-shadow: var(--card-shadow);
+            cursor: pointer;
+        }
+
+        footer {
+            width: 80%;
+            border-radius: 50px;
+            text-align: center;
+            padding: 10px;
+            background-color: var(--footer-bg-color);
+            color: var(--secondary-color);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>假条制作器 - Hack HTU</h1>
+    </nav>
+    <main>
+        <div class="notice">
+            <h2>📣 免责声明</h2>
+            <p>本工具仅用于学习用途，您所作的一切本工具概不负责，<br>详见我们的隐私政策和用户协议。</p>
+        </div>
+        <div class="container">
+            <p>1️⃣ 补充以下基础信息</p>
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" placeholder="格式：张三">
+            </div>
+            <div class="form-group">
+                <label for="studentId">学号</label>
+                <input type="text" id="studentId" placeholder="格式：0000000000">
+            </div>
+            <div class="form-group">
+                <label for="gender">性别</label>
+                <input type="text" id="gender" placeholder="格式：男">
+            </div>
+            <div class="form-group">
+                <label for="department">院系</label>
+                <input type="text" id="department" placeholder="格式：xxx院">
+            </div>
+            <div class="form-group">
+                <label for="year">年级</label>
+                <input type="number" id="year" placeholder="格式：2024">
+            </div>
+            <div class="form-group">
+                <label for="startDate">请假开始时间</label>
+                <input type="datetime-local" id="startDate">
+            </div>
+            <div class="form-group">
+                <label for="endDate">请假结束时间</label>
+                <input type="datetime-local" id="endDate">
+            </div>
+            <div class="form-group">
+                <label for="isLeaving">是否离校</label>
+                <!-- <input type="text" id="isLeaving"> -->
+                <select id="isLeaving">
+                    <option value="离校">离校</option>
+                    <option value="不离校">不离校</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="approver">审批人</label>
+                <input type="text" id="approver" placeholder="通常是审核的辅导员">
+            </div>
+            <div class="form-group">
+                <label for="upload">上传图片</label>
+                <input type="file" id="upload" accept="image/*">
+                <img id="preview">
+            </div>
+            <p>
+                2️⃣ 您的个人信息将保存在浏览器本地端，这些信息不会上传到服务器。
+            </p>
+            <button onclick="saveData()">下一步</button>
+            <div class="third-action">
+                <p>
+                    3️⃣ 下面是时效性信息，每次刷新会重置，请选择你要制作的假条类型，并补充下面的信息。
+                </p>
+                <div class="tabs">
+                    <div class="tab active" onclick="showTab('show')">出示假条</div>
+                    <div class="tab" onclick="showTab('approve')">批准假条</div>
+                </div>
+                <div id="show" class="tab-content active">
+                    <p>🔔 出示假条：是指假条审核完后的出示假条的页面。</p>
+                    <div class="form-group">
+                        <label for="approvalTime">批准时间</label>
+                        <input type="datetime-local" id="approvalTime">
+                    </div>
+                    <button onclick="generateShowLeaveNote()">生成出示假条信息卡片</button>
+                </div>
+                <div id="approve" class="tab-content">
+                    <!-- <div class="form-group">
+                        <label for="leaveType">请假类型</label>
+                        <select id="leaveType">
+                            <option value="公假">公假</option>
+                            <option value="事假">事假</option>
+                            <option value="病假">病假</option>
+                            <option value="延缓返校">延缓返校</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leaveReason">请假原因</label>
+                        <input type="text" id="leaveReason">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumber">联系电话</label>
+                        <input type="text" id="contactNumber">
+                    </div>
+                    <button onclick="generateApproveLeaveNote()">生成批准假条信息卡片</button> -->
+                    懒得做....
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            Thanks For JiaLiFuNia. <a href="../fake-maker/">返回旧版工具</a>
+        </footer>
+    </main>
+
+
+    <script>
+        document.getElementById('upload').addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('preview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function saveData() {
+            const data = {
+                name: document.getElementById('name').value,
+                studentId: document.getElementById('studentId').value,
+                gender: document.getElementById('gender').value,
+                department: document.getElementById('department').value,
+                year: document.getElementById('year').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                isLeaving: document.getElementById('isLeaving').value,
+                approver: document.getElementById('approver').value,
+                image: document.getElementById('preview').src
+            };
+            localStorage.setItem('formData', JSON.stringify(data));
+
+            document.querySelector('.third-action').style.display = "block";
+        }
+
+        function loadData() {
+            const data = JSON.parse(localStorage.getItem('formData'));
+            if (data) {
+                document.getElementById('name').value = data.name;
+                document.getElementById('studentId').value = data.studentId;
+                document.getElementById('gender').value = data.gender;
+                document.getElementById('department').value = data.department;
+                document.getElementById('year').value = data.year;
+                document.getElementById('startDate').value = data.startDate;
+                document.getElementById('endDate').value = data.endDate;
+                document.getElementById('isLeaving').value = data.isLeaving;
+                document.getElementById('approver').value = data.approver;
+                document.getElementById('preview').src = data.image;
+            }
+        }
+
+        function showTab(tab) {
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+
+            document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
+            document.getElementById(tab).classList.add('active');
+        }
+
+        function generateShowLeaveNote() {
+            const data = JSON.parse(localStorage.getItem('formData'));
+            const approvalTime = document.getElementById('approvalTime').value;
+
+
+            const cardData1 = {
+                ...data,
+                approvalTime,
+            };
+
+            localStorage.setItem('cardData1', JSON.stringify(cardData1));
+            window.location.href = "showLeaveCard/index.html";
+        }
+
+        function generateApproveLeaveNote() {
+            const data = JSON.parse(localStorage.getItem('formData'));
+            const leaveType = document.getElementById('leaveType').value;
+            const leaveReason = document.getElementById('leaveReason').value;
+            const contactNumber = document.getElementById('contactNumber').value;
+
+            const cardData2 = {
+                ...data,
+                leaveType,
+                leaveReason,
+                contactNumber
+            };
+
+            localStorage.setItem('cardData2', JSON.stringify(cardData2));
+            window.location.href = 'approveLeaveCard/index.html';
+        }
+
+        loadData();
+    </script>
+</body>
+
+</html>

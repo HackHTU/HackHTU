@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="description" content="欢迎来到Hack HTU，本工具服务于河南师范大学学生（HTUer）。为河师大学生提供一些方便快捷的工具，提供河师大学生的非官方群组。">
+<meta name="keywords" content="河南师范大学, 河师大, HTU, HTUer">
+<meta name=viewport
+    content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+<style>
+    html {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%
+    }
+
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    a {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+
+    input,
+    textarea {
+        caret-color: #07c160
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, .3)
+    }
+
+    .weui-cells {
+        background-color: #fff;
+        line-height: 1.41176471;
+        font-size: 17px;
+        overflow: hidden;
+        position: relative
+    }
+
+    .weui-cells:before {
+        top: 0;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5)
+    }
+
+    .weui-cells:after,
+    .weui-cells:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        color: rgba(0, 0, 0, .1);
+        z-index: 2
+    }
+
+    .weui-cells:after {
+        bottom: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5)
+    }
+
+    .weui-cells__title {
+        margin-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        color: rgba(0, 0, 0, .5);
+        font-size: 14px;
+        line-height: 1.4
+    }
+
+    .weui-cells__title+.weui-cells {
+        margin-top: 0
+    }
+
+    .weui-cell {
+        padding: 16px;
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+
+    .weui-cell:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 1px;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        color: rgba(0, 0, 0, .1);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        left: 16px;
+        z-index: 2
+    }
+
+    .weui-cell:first-child:before {
+        display: none
+    }
+
+    .weui-cell__bd {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1
+    }
+
+    .weui-label {
+        display: block;
+        width: 105px;
+        word-wrap: break-word;
+        word-break: break-all
+    }
+
+    @media screen and (min-width:352px) {}
+
+    @-webkit-keyframes a {
+        0% {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0)
+        }
+
+        to {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0)
+        }
+    }
+
+    @keyframes a {
+        0% {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0)
+        }
+
+        to {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0)
+        }
+    }
+
+    @-webkit-keyframes b {
+        0% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0)
+        }
+
+        to {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0)
+        }
+    }
+
+    @keyframes b {
+        0% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0)
+        }
+
+        to {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0)
+        }
+    }
+
+    @-webkit-keyframes c {
+        0% {
+            opacity: 0
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes c {
+        0% {
+            opacity: 0
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes d {
+        0% {
+            opacity: 1
+        }
+
+        to {
+            opacity: 0
+        }
+    }
+
+    @keyframes d {
+        0% {
+            opacity: 1
+        }
+
+        to {
+            opacity: 0
+        }
+    }
+
+    @-webkit-keyframes e {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        16% {
+            -webkit-transform: translateX(-8px);
+            transform: translateX(-8px)
+        }
+
+        28% {
+            -webkit-transform: translateX(-16px);
+            transform: translateX(-16px)
+        }
+
+        44% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        59% {
+            -webkit-transform: translateX(-16px);
+            transform: translateX(-16px)
+        }
+
+        73% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        82% {
+            -webkit-transform: translateX(16px);
+            transform: translateX(16px)
+        }
+
+        94% {
+            -webkit-transform: translateX(8px);
+            transform: translateX(8px)
+        }
+
+        to {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+    }
+
+    @keyframes e {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        16% {
+            -webkit-transform: translateX(-8px);
+            transform: translateX(-8px)
+        }
+
+        28% {
+            -webkit-transform: translateX(-16px);
+            transform: translateX(-16px)
+        }
+
+        44% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        59% {
+            -webkit-transform: translateX(-16px);
+            transform: translateX(-16px)
+        }
+
+        73% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        82% {
+            -webkit-transform: translateX(16px);
+            transform: translateX(16px)
+        }
+
+        94% {
+            -webkit-transform: translateX(8px);
+            transform: translateX(8px)
+        }
+
+        to {
+            -webkit-transform: translateX(0);
+            transform: translateX(0)
+        }
+    }
+
+    @-webkit-keyframes f {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+
+        to {
+            -webkit-transform: rotate(1turn);
+            transform: rotate(1turn)
+        }
+    }
+
+    @keyframes f {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+
+        to {
+            -webkit-transform: rotate(1turn);
+            transform: rotate(1turn)
+        }
+    }
+</style>
+<style>
+    :root {
+        --blue: #007bff;
+        --indigo: #6610f2;
+        --purple: #6f42c1;
+        --pink: #e83e8c;
+        --red: #dc3545;
+        --orange: #fd7e14;
+        --yellow: #ffc107;
+        --green: #28a745;
+        --teal: #20c997;
+        --cyan: #17a2b8;
+        --white: #fff;
+        --gray: #6c757d;
+        --gray-dark: #343a40;
+        --primary: #007bff;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --breakpoint-xs: 0;
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
+        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box
+    }
+
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+        margin: 0;
+        font-family:  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+        background-color: #fff
+    }
+
+    h5 {
+        margin-top: 0
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem
+    }
+
+    ol,
+    ul {
+        margin-top: 0;
+        margin-bottom: 1rem
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline
+    }
+
+    a:not([href]):not([class]) {
+        color: inherit;
+        text-decoration: none
+    }
+
+    a:not([href]):not([class]):hover {
+        color: inherit;
+        text-decoration: none
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: .5rem
+    }
+
+    input,
+    select,
+    textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit
+    }
+
+    input {
+        overflow: visible
+    }
+
+    select {
+        text-transform: none
+    }
+
+    select {
+        word-wrap: normal
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+        box-sizing: border-box;
+        padding: 0
+    }
+
+    textarea {
+        overflow: auto;
+        resize: vertical
+    }
+
+    ::-webkit-file-upload-button {
+        font: inherit;
+        -webkit-appearance: button
+    }
+
+    h5 {
+        font-weight: 500;
+        line-height: 1.2
+    }
+
+    small {
+        font-size: 80%;
+        font-weight: 400
+    }
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px
+    }
+
+    .col {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    .col {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%
+    }
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (max-width:575.98px) {}
+
+    @media (max-width:767.98px) {}
+
+    @media (max-width:991.98px) {}
+
+    @media (max-width:1199.98px) {}
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        font-weight: 400;
+        line-height: 1.5;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+        .form-control {
+            transition: none
+        }
+    }
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+    }
+
+    .form-control::-webkit-input-placeholder {
+        color: #6c757d;
+        opacity: 1
+    }
+
+    .form-control::placeholder {
+        color: #6c757d;
+        opacity: 1
+    }
+
+    .form-control:disabled,
+    .form-control[readonly] {
+        background-color: #e9ecef;
+        opacity: 1
+    }
+
+    .form-group {
+        margin-bottom: 1rem
+    }
+
+    @media (min-width:576px) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+
+
+    @media (max-width:575.98px) {}
+
+    @media (min-width:576px) {}
+
+    @media (max-width:767.98px) {}
+
+    @media (min-width:768px) {}
+
+    @media (max-width:991.98px) {}
+
+    @media (min-width:992px) {}
+
+    @media (max-width:1199.98px) {}
+
+    @media (min-width:1200px) {}
+
+    .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box
+    }
+
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem
+    }
+
+    @media (min-width:576px) {}
+
+    @media (min-width:576px) {}
+
+    @media (min-width:576px) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (min-width:576px) {}
+
+    @-webkit-keyframes progress-bar-stripes {
+        from {
+            background-position: 1rem 0
+        }
+
+        to {
+            background-position: 0 0
+        }
+    }
+
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: 1rem 0
+        }
+
+        to {
+            background-position: 0 0
+        }
+    }
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    .media {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: start;
+        align-items: flex-start
+    }
+
+    .media-body {
+        -ms-flex: 1;
+        flex: 1
+    }
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (min-width:576px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    @-webkit-keyframes spinner-border {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @keyframes spinner-border {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @-webkit-keyframes spinner-grow {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0)
+        }
+
+        50% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none
+        }
+    }
+
+    @keyframes spinner-grow {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0)
+        }
+
+        50% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none
+        }
+    }
+
+    @media (prefers-reduced-motion:reduce) {}
+
+    .bg-success {
+        background-color: #28a745 !important
+    }
+
+    .clearfix::after {
+        display: block;
+        clear: both;
+        content: ""
+    }
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @supports ((position:-webkit-sticky) or (position:sticky)) {
+        .sticky-top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1020
+        }
+    }
+
+    .w-auto {
+        width: auto !important
+    }
+
+    .h-100 {
+        height: 100% !important
+    }
+
+    .m-0 {
+        margin: 0 !important
+    }
+
+    .mb-0 {
+        margin-bottom: 0 !important
+    }
+
+    .mb-1 {
+        margin-bottom: .25rem !important
+    }
+
+    .mt-5 {
+        margin-top: 3rem !important
+    }
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (min-width:576px) {}
+
+    @media (min-width:768px) {}
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    .text-danger {
+        color: #dc3545 !important
+    }
+
+    .text-muted {
+        color: #6c757d !important
+    }
+</style>
+<style>
+    body>.wrapper>.page {
+        -webkit-overflow-scrolling: touch
+    }
+
+    .form-group>label {
+        color: #333;
+        font-weight: 500
+    }
+
+    .form-control.form-control-datetimepicker[readonly] {
+        background: #fff
+    }
+
+    .media>.media-body {
+        padding-left: 10px
+    }
+
+    @media (max-width:414px) {}
+
+    :root {
+        font-size: 14px
+    }
+
+    body,
+    html {
+        height: 100%;
+        overflow: hidden
+    }
+
+    body {
+        font-size: 14px;
+        color: #596475
+    }
+
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        display: block;
+        overflow: hidden
+    }
+
+    .page {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-color: #eff2f9;
+        background-image: radial-gradient(ellipse at 30% 30%, #ffffff 0%, #eff2f9 50%, #E5EBF9 100%);
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        overflow: hidden;
+        -webkit-transition: all ease .4s;
+        -moz-transition: all ease .4s;
+        -ms-transition: all ease .4s;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+        -ms-box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .5)
+    }
+
+    .page-content {
+        padding: 0;
+        height: 100%;
+        min-height: 100%;
+        overflow-y: auto;
+        position: relative
+    }
+
+    header.fixed-header~.page-content {
+        padding-top: 50px
+    }
+
+    h5 {
+        color: #27303e
+    }
+
+    p {
+        color: #7a8392
+    }
+
+    .card {
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .25);
+        -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .25);
+        -moz-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .25);
+        -ms-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .25)
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 320px;
+        position: fixed;
+        overflow-y: auto;
+        border-radius: 0 10px 10px 0;
+        top: 0;
+        z-index: 9999;
+        transition: all ease .5s;
+        -webkit-transition: all ease .5s;
+        -moz-transition: all ease .5s;
+        -ms-transition: all ease .5s;
+        background: #3f51b5;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, .5);
+        -ms-box-shadow: 0 3px 15px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0 3px 15px rgba(0, 0, 0, .5)
+    }
+
+    .sidebar-left {
+        left: -350px
+    }
+
+    .navbar {
+        width: 100%;
+        display: block;
+        padding: 0;
+        margin: 0
+    }
+
+    .navbar .navbar-nav {
+        width: 100%;
+        display: block
+    }
+
+    .navbar .navbar-nav li {
+        width: 100%;
+        display: block;
+        border-top: 0;
+        padding: 0 15px
+    }
+
+    .navbar .navbar-nav li a {
+        width: 100%;
+        display: block;
+        line-height: 26px;
+        padding: 10px 10px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, .9);
+        vertical-align: middle;
+        border-radius: 10px;
+        position: relative
+    }
+
+    .navbar .navbar-nav li a:focus,
+    .navbar .navbar-nav li a:hover {
+        color: #fff;
+        background: rgba(0, 0, 0, .2)
+    }
+
+    header {
+        width: 100%;
+        height: 50px;
+        z-index: 6;
+        -webkit-transition: all ease .4s;
+        -moz-transition: all ease .4s;
+        -ms-transition: all ease .4s
+    }
+
+    header>.left {
+        width: auto;
+        display: flex
+    }
+
+    header>.left a {
+        width: 40px;
+        height: 40px;
+        line-height: 34px;
+        display: block;
+        text-align: center;
+        margin: 5px;
+        border-radius: 10px
+    }
+
+    header>.left a:hover,
+    header>.right a:hover {
+        background: rgba(0, 0, 0, .1)
+    }
+
+    header>.left a i {
+        display: inline-block;
+        vertical-align: middle
+    }
+
+    header.fixed-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden
+    }
+
+    header.fixed-header>.left>a>i.la.la-arrow-left {
+        font-size: 1.5rem;
+        line-height: 44px;
+        margin-top: -2px
+    }
+
+    .logo {
+        width: auto;
+        display: inline-block;
+        color: #fff;
+        font-size: 18px;
+        line-height: 50px;
+        font-weight: 600;
+        vertical-align: middle
+    }
+
+    .logo:hover {
+        text-decoration: none;
+        color: #fff
+    }
+
+    header a {
+        color: #fff
+    }
+
+    header a:active:focus,
+    header a:hover {
+        color: #fff
+    }
+
+    .text-danger {
+        color: #ff5e62 !important
+    }
+
+    .status-online {
+        width: 8px;
+        height: 8px;
+        vertical-align: middle;
+        display: inline-block;
+        border-radius: 5px
+    }
+
+    a:hover {
+        text-decoration: none
+    }
+
+    .card {
+        margin-bottom: 0;
+        border: 0;
+        border-radius: 10px
+    }
+
+    .card .card-body {
+        z-index: 1
+    }
+
+    .media {
+        position: relative
+    }
+
+    .media .media-body h5 {
+        font-size: 18px
+    }
+
+    .media .media-body p:last-child {
+        font-size: 14px;
+        margin-bottom: 0
+    }
+
+    .avatar {
+        border-radius: 10px;
+        -ms-border-radius: 10px;
+        margin: 0;
+        margin-right: 10px;
+        vertical-align: middle;
+        display: inline-block;
+        overflow: hidden
+    }
+
+    .avatar.avatar-40 {
+        width: 40px;
+        height: 40px;
+        line-height: 40px
+    }
+
+    .form-control {
+        border-radius: 2px;
+        padding: 4px 11px;
+        color: rgba(0, 0, 0, .65);
+        font-size: 14px
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #80bdff
+    }
+
+    body .wrapper>.page>#content {
+        height: 100%
+    }
+
+    body .wrapper .page-content {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right)
+    }
+
+    body .wrapper .sidebar-left {
+        padding-left: env(safe-area-inset-left)
+    }
+
+    .clearfix {
+        clear: both
+    }
+
+    .profile-link {
+        padding: 15px
+    }
+
+    .profile-link .media {
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px
+    }
+
+    @keyframes lds-roller {
+        0% {
+            transform: rotate(0)
+        }
+
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, .2)
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+        -webkit-border-radius: 10px;
+        border-radius: 10px
+    }
+
+    @media screen and (max-width:350px) {
+        header {
+            height: 44px
+        }
+
+        header>.left a {
+            height: 34px;
+            line-height: 28px
+        }
+
+        header>.left a {
+            width: 34px
+        }
+
+        header.fixed-header~.page-content {
+            padding-top: 44px
+        }
+
+        .logo {
+            line-height: 44px;
+            font-size: 15px;
+            vertical-align: top
+        }
+
+        .navbar .navbar-nav li a {
+            padding: 5px 10px
+        }
+
+        .card .card-body {
+            padding: 15px
+        }
+
+        .sidebar {
+            width: 300px
+        }
+    }
+
+    .html-form {
+        padding: 20px;
+        background: #fff;
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0
+    }
+
+    .html-form .control-label {
+        font-weight: 700
+    }
+
+    ::-webkit-input-placeholder {
+        color: #bbb !important
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: #bbb !important
+    }
+
+    .color-theme-blue .sidebar,
+    .color-theme-blue header {
+        background-color: #0060d9
+    }
+
+    @media (min-width:800px) {
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative !important
+        }
+    }
+
+    @media screen and (max-width:350px) {
+        header.fixed-header>.left>a>i.la.la-arrow-left {
+            line-height: 36px
+        }
+    }
+</style>
+<style>
+    .la {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1
+    }
+
+    @-webkit-keyframes la-spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @keyframes la-spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    .la-angle-down:before {
+        content: ""
+    }
+
+    .la-arrow-left:before {
+        content: ""
+    }
+
+    .la-user:before {
+        content: ""
+    }
+
+    @font-face {
+        font-family: "Line Awesome Free";
+        font-style: normal;
+        font-weight: 400;
+        src: none;
+    }
+    
+    .la {
+        font-family: "Line Awesome Free";
+        font-weight: 900
+    }
+</style>
+<style>
+    .font-12 {
+        font-size: 12px !important
+    }
+
+    .w-auto {
+        width: auto
+    }
+
+    .h-100 {
+        height: 100px !important
+    }
+
+    .m-0 {
+        margin: 0px !important
+    }
+
+    .mb-0 {
+        margin-bottom: 0px !important
+    }
+
+    .mb-1 {
+        margin-bottom: 1px !important
+    }
+
+    .mt-5 {
+        margin-top: 5px !important
+    }
+
+    .mb-10 {
+        margin-bottom: 10px !important
+    }
+
+    .mb-15 {
+        margin-bottom: 15px !important
+    }
+
+    .mt-20 {
+        margin-top: 20px !important
+    }
+
+    .mb-20 {
+        margin-bottom: 20px !important
+    }
+
+    .green {
+        color: green !important
+    }
+</style>
+<style>
+    body {
+        background: #F6F6F6
+    }
+
+    @keyframes fa-spin {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(-360deg)
+        }
+    }
+
+    .weui-cell__bd__hd {
+        color: #555;
+        font-size: 16px
+    }
+
+    .weui-cell__bd__bd {
+        color: #aaa;
+        font-size: 14px
+    }
+
+    .weui-cells__dense .weui-cell {
+        padding: 10px 16px;
+        font-size: 15px
+    }
+
+    .weui-cells__title {
+        margin-bottom: 6px
+    }
+
+    .weui-cells.weui-cells_separated {
+        background-color: transparent;
+        overflow: visible;
+        border: none
+    }
+
+    .weui-cells.weui-cells_separated:before,
+    .weui-cells.weui-cells_separated:after {
+        border: none
+    }
+
+    .weui-cells.weui-cells_separated .weui-cell {
+        margin-bottom: 10px;
+        background-color: white
+    }
+
+    .weui-cells.weui-cells_separated .weui-cell:before {
+        display: none
+    }
+
+    .weui-cell__bd__bd {
+        margin-top: 5px
+    }
+
+    .weui-cell__bd__bd_status {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed #eee;
+        font-size: 14px
+    }
+
+    .weui-cell:focus {
+        text-decoration: none
+    }
+
+    .weui-cells__title.collapsible {
+        cursor: pointer
+    }
+
+    .weui-cells__title.collapsible .right-tip {
+        float: right;
+        color: #2C58AB;
+        transform: scale(0.9)
+    }
+
+    .weui-label {
+        margin-bottom: 0;
+        color: #555
+    }
+
+    .weui-cell__bd {
+        color: #555
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(125, 125, 125, 0.5)
+    }
+
+    @media (min-width:769px) {
+        .weui-cells {
+            border-radius: 4px;
+            border: 1px solid #e5e5e5
+        }
+
+        .weui-cells:before,
+        .weui-cells:after {
+            display: none
+        }
+    }
+</style>
+<title>河南师大智慧学工用户中心</title>
+<style>
+    .fixed-header {
+        background: linear-gradient(135deg, rgb(0, 180, 201) 5%, rgb(59, 108, 254) 100%) !important
+    }
+
+    @media (max-width:800px) {}
+</style>
+<style data-id=immersive-translate-input-injected-css>
+    @-webkit-keyframes immersive-translate-loading-animation {
+        from {
+            -webkit-transform: rotate(0deg)
+        }
+
+        to {
+            -webkit-transform: rotate(359deg)
+        }
+    }
+
+    @keyframes immersive-translate-loading-animation {
+        from {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(359deg)
+        }
+    }
+
+    @keyframes immersiveTranslateShadowRolling {
+        0% {
+            box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0)
+        }
+
+        12% {
+            box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0)
+        }
+
+        25% {
+            box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0)
+        }
+
+        36% {
+            box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0)
+        }
+
+        50% {
+            box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color)
+        }
+
+        62% {
+            box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color)
+        }
+
+        75% {
+            box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color)
+        }
+
+        87% {
+            box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color)
+        }
+
+        100% {
+            box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0)
+        }
+    }
+
+    @media (prefers-color-scheme:dark) {}
+
+    @media screen and (max-width:768px) {}
+</style>
+
+<style class=sf-hidden>
+    .html-form .radio-inline {
+        min-width: 100px
+    }
+</style>
+<meta name=referrer content=no-referrer>
+<link rel=icon href="data:;base64,iVBORw0KGgo=">
+<style>
+    .sf-hidden {
+        display: none !important
+    }
+</style>
+<style>
+    img[src="data:,"],
+    source[src="data:,"] {
+        display: none !important
+    }
+</style>
+
+
+<!-- fake place start -->
+<script>
+    window.onload = function () {
+        // 弹出窗口的函数
+        document.getElementById('myModal').style.display = "block";
+    };
+
+    function onCloseModal() {
+        // 关闭窗口的函数
+        document.getElementById('myModal').style.display = "none";
+    }
+</script>
+<script>
+    // 一坨大便
+    function FuckName() {
+        var text = document.getElementById("fakename").value;
+        document.getElementById("fuckname").innerHTML = text;
+    }
+
+    function FuckNumber() {
+        var text = document.getElementById("fakenumber").value;
+        document.getElementById("fucknumber").innerHTML = text;
+    }
+
+    function FuckClass() {
+        var text = document.getElementById("fakeclass").value;
+        document.getElementById("fuckclass").innerHTML = text;
+    }
+
+    function FuckLeader() {
+        var text = document.getElementById("fakeleadername").value;
+        document.getElementById("fuckleadername").innerHTML = text;
+        document.getElementById("fuckleadername_2").innerHTML = text;
+    }
+
+    function FakeMessage() {
+        var text = document.getElementById("fakemessage").value;
+        document.getElementById("fuckmessage").setAttribute('placeholder', text);
+    }
+
+    function FakePhoneNumber() {
+        var text = document.getElementById("fakephonenumber").value;
+        document.getElementById("fuckphontnumber").setAttribute('value', text);
+        document.getElementById("fuckphontnumber_2").setAttribute('value', text);
+    }
+
+    function FakeDate() {
+        var dateTime = document.getElementById("faketime").value;
+        document.getElementById("fucktime").innerText = dateTime.replace('T', " ");
+    }
+</script>
+
+
+<body class="color-theme-blue push-content-right theme-light">
+
+    <div id="myModal"
+        style="display:none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);">
+
+        <div style="background-color: #fefefe; margin: 15% auto; padding: 30px; text-align: center;border: 1px solid #888; width: 80%; border-radius: 20px;">
+            <span style="float: right; cursor: pointer; font-size: large;" onclick="onCloseModal()">&times;</span>
+            <h1>河南师范大学 请假条申请</h1>
+            <p>
+                本工具仅供学习交流，严禁用于其他用途，请将截图于24小时之内删除。
+            <p>
+                <mark>请将以下资料填写完成后关闭按钮。</mark>
+            </p>
+            <input type="text" id="fakename" placeholder="姓名" oninput="FuckName()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <input type="text" id="fakeclass" placeholder="班级" oninput="FuckClass()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <input type="text" id="fakenumber" placeholder="学号" oninput="FuckNumber()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <br>
+                <input type="text" id="fakeleadername" placeholder="审核人（导员）" oninput="FuckLeader()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <input type="text" id="fakemessage" placeholder="事由详情说明" oninput="FakeMessage()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <input type="text" id="fakephonenumber" placeholder="联系电话" oninput="FakePhoneNumber()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <br>
+            假条提交时间：<input type="datetime-local" id="faketime" onchange="FakeDate()"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            假条通过时间：<input type="datetime-local" id="dateTimePicker1" name="dateTimePicker1"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <br>
+            请假开始时间：<input type="datetime-local" id="dateTimePicker2" name="dateTimePicker2"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            请假结束时间：<input type="datetime-local" id="dateTimePicker3" name="dateTimePicker3"
+                style="margin-bottom:10px; padding:10px; border:1px solid #ccc;">
+            <script>
+                document.getElementById('dateTimePicker1').addEventListener('change', function () {
+                    document.getElementById('fucktime_2').innerText = this.value.replace("T", " ");
+                });
+
+                document.getElementById('dateTimePicker2').addEventListener('change', function () {
+                    document.getElementById('fucktime_3').value = this.value.replace("T", " ");
+                });
+
+                document.getElementById('dateTimePicker3').addEventListener('change', function () {
+                    document.getElementById('fucktime_4').value = this.value.replace("T", " ");
+                });
+            </script>
+        </div>
+
+    </div>
+
+    <!-- fake place end -->
+
+    <div class=wrapper>
+        <div class="sidebar sidebar-left" id=leftmenuarea>
+            <div class=profile-link>
+                <a href=# class=media>
+                    <div class="w-auto h-100">
+                        <figure class="avatar avatar-40">
+                            <i class="la la-user" style=font-size:40px></i>
+                        </figure>
+                    </div>
+                    <div class=media-body>
+                        <h5 class=mb-0>姓名<span class="status-online bg-success"></span>
+                        </h5>
+                        <p>student</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="page vue-loading" style=position:absolute;overflow-y:auto>
+            <div id=content>
+                <header class="row m-0 fixed-header">
+                    <div class=left>
+                        <a href=""> <i class="la la-arrow-left">
+                            </i>
+                        </a>
+                    </div>
+                    <div class="col center">
+                        <a href=javascript:void(0) class=logo>
+                            请假条
+                        </a>
+                    </div>
+                </header>
+                <div class=page-content>
+                    <div style="padding:0px 15px">
+                        
+                        <!--bug fix-->
+                        
+                        <div class=weui-cells__title>请假及审核状态</div>
+                        <div class="weui-cells weui-cells_form weui-cells__dense">
+                            <div class=weui-cell>
+                                <div class=weui-cell__hd>
+                                    <label class=weui-label>请假人</label>
+                                </div>
+                                <div class=weui-cell__bd>
+                                    <div id="fuckname">你的姓名</div> <small class=text-muted>(<span
+                                            id="fucknumber">学号</span>)</small>
+                                    <div class="font-12 text-muted mt-5">班级：<span id="fuckclass">你的班级</span></div>
+                                </div>
+                            </div>
+                            <div class=weui-cell>
+                                <div class=weui-cell__hd>
+                                    <label class=weui-label>提交时间</label>
+                                </div>
+                                <div class=weui-cell__bd id="fucktime">
+                                    请选择时间
+                                </div>
+                            </div>
+                            <div class=weui-cell>
+                                <div class=weui-cell__hd>
+                                    <label class=weui-label>流程方案</label>
+                                </div>
+                                <div class=weui-cell__bd>
+                                    老师审核
+                                </div>
+                            </div>
+                            <div class=weui-cell>
+                                <div class=weui-cell__hd>
+                                    <label class=weui-label>审批状态</label>
+                                </div>
+                                <div class="weui-cell__bd green">
+                                    通过“老师审核”
+                                </div>
+                            </div>
+                            <div class=weui-cell>
+                                <div class=weui-cell__hd>
+                                    <label class=weui-label>审核人</label>
+                                </div>
+                                <div class=weui-cell__bd id="fuckleadername">
+                                    Admin
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui-cells__title collapsible collapsed">审核历史<span class=right-tip>展开 <i
+                                    class="la la-angle-down"></i>
+                            </span>
+                        </div>
+                        <div class="weui-cells weui-cells_separated weui-cells_form">
+                            <div class=weui-cell style=display:none></div>
+                            <div class=weui-cell style=display:none></div>
+                            <div class="weui-cell stay">
+                                <div class=weui-cell__bd>
+                                    <div class=weui-cell__bd__hd id="fucktime_2">审核时间</div>
+                                    <div class=weui-cell__bd__bd>
+                                        审核人：<span id="fuckleadername_2">Admin</span>
+                                    </div>
+                                    <div class="weui-cell__bd__bd text-danger">同意</div>
+                                    <div class=weui-cell__bd__bd_status>通过“老师审核”</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=weui-cells__title>
+                            请假内容
+                        </div>
+                        <div class="html-form readonly">
+                            <div data-type=radio class=form-group>
+                                <label class=control-label>请假类型 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <label class=radio-inline style=margin-right:10px>
+                                        <input bjmf-score link_n=fn_00000 bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=公假 title=公假 name=rd[fn_00000] disabled> 公假</label>
+                                    <label class=radio-inline style=margin-right:10px;color:var(--primary)>
+                                        <input bjmf-score link_n=fn_00000 bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=事假 title=事假 name=rd[fn_00000] disabled checked> 事假</label>
+                                    <label class=radio-inline style=margin-right:10px>
+                                        <input bjmf-score link_n=fn_00000 bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=病假 title=病假 name=rd[fn_00000] disabled> 病假</label>
+                                    <label class=radio-inline style=margin-right:10px>
+                                        <input bjmf-score link_n=fn_00000 bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=延缓返校 title=延缓返校 name=rd[fn_00000] disabled> 延缓返校</label>
+                                    <p class=placeholder>公假：活动、实习等原因</p>
+                                </div>
+                            </div>
+                            <div linkn=fn_00000 linkv='["公假"]' data-type=radio class=form-group style=display:none>
+                            </div>
+                            <div linkn=shixi linkv='["实习"]' data-type=radio class=form-group style=display:none></div>
+                            <div data-type=radio class=form-group>
+                                <label class=control-label>是否离校 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <label class=radio-inline style=margin-right:10px;color:var(--primary)>
+                                        <input bjmf-score link_n=fn_00000 bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=离校 title=离校 name=rd[fn_00000] disabled checked> 离校</label>
+                                    <label class=radio-inline style=margin-right:10px>
+                                        <input bjmf-score link_n=fn_00000 bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=不离校 title=不离校 name=rd[fn_00000] disabled> 不离校</label>
+                                    <p class=placeholder></p>
+                                </div>
+                            </div>
+                            <div data-type=datetime class=form-group>
+                                <label class=control-label>起始时间 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <input link_n=fn_907 bmfe=bmfe bmneed=1 field-type=datetime readonly name=rd[fn_907]
+                                        type=text placeholder dtmin dtmax
+                                        class="form-control form-control-datetimepicker" id="fucktime_3"
+                                        style="border:1px solid rgb(229,230,231)" disabled value="2024-01-01 00:00">
+                                </div>
+                            </div>
+                            <div data-type=datetime class=form-group>
+                                <label class=control-label>结束时间 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <input link_n=fn_2379 bmfe=bmfe bmneed=1 field-type=datetime readonly
+                                        name=rd[fn_2379] type=text placeholder dtmin dtmax
+                                        class="form-control form-control-datetimepicker" id="fucktime_4"
+                                        style="border:1px solid rgb(229,230,231)" disabled value="2024-01-01 00:00">
+                                </div>
+                            </div>
+                            <div data-type=textarea class=form-group>
+                                <label class=control-label>事由说明 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <textarea bmfe=bmfe bmneed=1 field-type=textarea name=rd[fn_901] placeholder=事由详情说明
+                                        class=form-control style=height:66px;overflow-y:hidden id="fuckmessage"
+                                        disabled></textarea>
+                                </div>
+                            </div>
+                            <div linkn=fn_00000 linkv='["离校"]' data-type=radio class=form-group>
+                                <label class=control-label>是否离开本市 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <label class=radio-inline style=margin-right:10px;color:var(--primary)>
+                                        <input bjmf-score link_n=a bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=是 title=是 name=rd[a] disabled checked> 是</label>
+                                    <label class=radio-inline style=margin-right:10px>
+                                        <input bjmf-score link_n=a bmfe=bmfe bmneed=1 field-type=radio type=radio
+                                            value=否 title=否 name=rd[a] disabled> 否</label>
+                                    <p class=placeholder></p>
+                                </div>
+                            </div>
+                            <div linkn=a linkv='["是"]' data-type=address class=form-group>
+                                <label class="control-label autogps_btn_area">具体去向 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <span bjmfform_address=rd_c>
+                                        <select class="p form-control mb-1" disabled>
+                                            <option value=选择省 selected>选择省
+                                            <option value=北京市>北京市
+                                            <option value=天津市>天津市
+                                            <option value=河北省>河北省
+                                            <option value=山西省>山西省
+                                            <option value=内蒙古自治区>内蒙古自治区
+                                            <option value=辽宁省>辽宁省
+                                            <option value=吉林省>吉林省
+                                            <option value=黑龙江省>黑龙江省
+                                            <option value=上海市>上海市
+                                            <option value=江苏省>江苏省
+                                            <option value=浙江省>浙江省
+                                            <option value=安徽省>安徽省
+                                            <option value=福建省>福建省
+                                            <option value=江西省>江西省
+                                            <option value=山东省>山东省
+                                            <option value=河南省>河南省
+                                            <option value=湖北省>湖北省
+                                            <option value=湖南省>湖南省
+                                            <option value=广东省>广东省
+                                            <option value=广西壮族自治区>广西壮族自治区
+                                            <option value=海南省>海南省
+                                            <option value=重庆市>重庆市
+                                            <option value=四川省>四川省
+                                            <option value=贵州省>贵州省
+                                            <option value=云南省>云南省
+                                            <option value=西藏自治区>西藏自治区
+                                            <option value=陕西省>陕西省
+                                            <option value=甘肃省>甘肃省
+                                            <option value=青海省>青海省
+                                            <option value=宁夏回族自治区>宁夏回族自治区
+                                            <option value=新疆维吾尔自治区>新疆维吾尔自治区
+                                            <option value=香港特别行政区>香港特别行政区
+                                            <option value=澳门特别行政区>澳门特别行政区
+                                            <option value=台湾>台湾
+                                            <option value=境外>境外
+                                        </select>
+                                        <select class="c form-control mb-1" disabled>
+                                            <option value=选择市 selected>选择市
+                                        </select>
+                                        <select class="d form-control mb-1" disabled>
+                                            <option value=选择县区 selected>选择县区
+                                        </select>
+                                        <input placeholder=填写县区下详细地址 class="a form-control" disabled value=河南省,郑州市,二七区>
+                                        <p class=placeholder>详细到省市区县</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div linkn=a linkv='["是"]' data-type=text class=form-group>
+                                <label class=control-label>乘车方式和车次 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <input bmfe=bmfe bmneed=1 field-type=text type=text name=rd[b]
+                                        placeholder=从离校到目的地的所有转乘信息 dic vchk class=form-control disabled value=高铁>
+                                </div>
+                            </div>
+                            <div linkn=a linkv='["是"]' data-type=checkbox class=form-group>
+                                <label class=control-label>已告知家长请假详情 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <label class=radio-inline style=margin-right:10px;color:var(--primary)>
+                                        <input bjmf-score link_n=notified_parent bmfe=bmfe bmneed=1 field-type=checkbox
+                                            type=checkbox value=我已告知家长请假详情。 title=我已告知家长请假详情。 name=rd[notified_parent][]
+                                            disabled checked> 我已告知家长请假详情。</label>
+                                    <p class=placeholder>必填</p>
+                                </div>
+                            </div>
+                            <div linkn=a linkv='["是"]' data-type=text class=form-group>
+                                <label class=control-label>紧急联系电话 <span class="required-mark sf-hidden"
+                                        style=color:red>*</span>
+                                </label>
+                                <div>
+                                    <input bmfe=bmfe bmneed=1 field-type=text type=text name=rd[urgent_contact]
+                                        placeholder=必填 dic vchk class=form-control disabled id="fuckphontnumber"
+                                        value="">
+                                </div>
+                            </div>
+                            <div linkn=fn_00000 linkv='["公假"]' data-type=text class=form-group style=display:none></div>
+                            <div data-type=file class=form-group>
+                                <label class=control-label>相关证明材料</label>
+                                <div>
+                                    <p class=placeholder>病假等提供以便核实</p>
+                                </div>
+                            </div>
+                            <div data-type=text class=form-group>
+                                <label class=control-label>联系电话</label>
+                                <div>
+                                    <input bmfe=bmfe field-type=text type=text name=rd[fn_90886] placeholder=期间可联系到本人的号码
+                                        dic vchk class=form-control disabled id="fuckphontnumber_2" value="">
+                                </div>
+                            </div>
+                            <div data-type=tip class=form-group>
+                                <label class=control-label>备注：</label>
+                                <div>
+                                    <div bmfe=bmfe field-type=tip name=rd[]>
+                                        <ol style=list-style-position:inside>
+                                            <li>
+                                                <span style=color:red>*</span> 为必填项。
+                                            <li>填写完假条后，请及时和辅导员老师电话联系，向老师说明情况并提醒其及时审批。
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-type=checkbox class=form-group>
+                                <label class="hide control-label sf-hidden">我已了解上述情况，确保信息无误。 </label>
+                                <div>
+                                    <label class=radio-inline style=margin-right:10px;color:var(--primary)>
+                                        <input bjmf-score link_n=confirm_info bmfe=bmfe bmneed=1 field-type=checkbox
+                                            type=checkbox value=我已了解上述情况，确保信息无误。 title=我已了解上述情况，确保信息无误。
+                                            name=rd[confirm_info][] disabled checked> 我已了解上述情况，确保信息无误。</label>
+                                    <p class=placeholder></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=mb-15></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

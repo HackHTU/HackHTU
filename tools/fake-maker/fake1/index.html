@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>河南师大智慧学工用户中心</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\line-awesome-nob.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script>
+    <script src="js/app.js?"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="css/helper.css?">
+    <link rel="stylesheet" href="css/main_vue.css?">
+    <style>
+        .fixed-header,
+        .fixed-header+header.row.m-0,
+        .e-bg-primary {
+            background: linear-gradient(135deg, rgb(0, 180, 201) 5%, rgb(59, 108, 254) 100%) !important;
+        }
+
+        .border-primary,
+        .e-border-primary {
+            border-color: #009688 !important;
+        }
+
+        .e-primary {
+            color: rgb(0, 150, 136) !important;
+        }
+
+        @media (max-width: 800px) {
+            .layui-header {
+                background: linear-gradient(135deg, rgb(0, 180, 201) 5%, rgb(59, 108, 254) 100%) !important;
+            }
+        }
+    </style>
+
+</head>
+<!-- 这里可以放入另一个网页的内容 -->
+
+<body class="color-theme-blue push-content-right theme-light ">
+
+    <div class="wrapper">
+        <div class="sidebar sidebar-left" id="leftmenuarea"></div>
+        <div class="page vue-loading" style="position: absolute;overflow-y: auto">
+            <div id="content">
+
+                <header class="row m-0 fixed-header">
+                    <div class="left">
+                        <a href="index.html">
+                            <i class="la la-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="col center">
+                        <a href="javascript:void(0);" class="logo">出示假条</a>
+                    </div>
+
+                    <div class="right auto">
+                        <a href="javascript:"">
+            <i class=" la la-qrcode font-22"></i> 出示假条核验码
+                        </a>
+                    </div>
+                </header>
+
+                <div class="page-content">
+                    <div style="padding:0 15px;">
+                        <div id="qrcode_box2_area" class="text-center my-20 hide">
+                            <div id="qrcode_box2" class="mt-10 ">
+                                <div id="qrcode_img2"></div>
+                                <div style="color: red;font-size: 12px;">只能使用专用核验工具扫码</div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-15">
+                            <div class="card-body ">
+                                <div class="card-text relative text-dark">
+                                    <p class="h2 text-center text-dark font-weight-light">请假条</p>
+                                    <p style="text-align: center;color: red" contenteditable="true">河南师范大学 某某某学院</p>
+                                    <img id="approved_icon" src="img/approved.png" alt="">
+                                    <div class="row mt-30 mb-20">
+                                        <div class="col d-flex flex-column justify-content-center align-items-center">
+                                            <figure class="figure mb-0">
+                                                <img class="figure-img img-fluid rounded" src="img/picture.png"
+                                                    alt="点击上传比例为2:3的照片">
+                                            </figure>
+                                        </div>
+                                        <div class="col d-flex flex-column justify-content-center pl-0">
+                                            <p class="h5 mb-15 mt-5 text-dark" contenteditable="true"><span
+                                                    class="h6">姓名：</span>自定义</p>
+                                            <p class="h6 mb-10 font-weight-normal" contenteditable="true">性别：男</p>
+                                            <p class="h6 mb-10 font-weight-normal" contenteditable="true">院系：0000级</p>
+                                            <p class="h6 mb-10 font-weight-normal" contenteditable="true">学号：0000000000
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div id="qrcode_box" class="mv-20 text-center relative" style="display: none">
+                                        <div id="qrcode_img"></div>
+                                        <div id="qrcode_loading"><i class="la la-refresh la-spin"></i></div>
+                                        <div class="mt-10 text-danger font-12">
+                                            有效期5分钟，到期后请
+                                            <a href="javascript:" onclick="refreshQrCode()"><i
+                                                    class="la la-refresh"></i>刷新</a>
+                                        </div>
+                                    </div>
+
+                                    <p class="h6 font-weight-normal">请假时间</p>
+                                    <table class="table time-table text-center">
+                                        <tr>
+                                            <th>起</th>
+                                            <td>
+                                                <p class="h3 font-weight-light text-dark" contenteditable="true">
+                                                    2024-01-01 00:00</p>
+                                            </td>
+                                            <th><span class="invisible">起</span></th>
+                                        </tr>
+                                        <tr>
+                                            <th>至</th>
+                                            <td>
+                                                <p class="h3 font-weight-light text-dark" contenteditable="true">
+                                                    2024-01-01 00:00</p>
+                                            </td>
+                                            <th><span class="invisible">至</span></th>
+                                        </tr>
+                                    </table>
+                                    <div class="text-center text-success mt-20 mb--10 font-24">不离校</div>
+
+                                    <div class="text-center">
+                                        <table class="table bottom-table table-sm table-borderless mt-30">
+                                            <tr>
+                                                <th>审批人：</th>
+                                                <td class="text-dark" contenteditable="true">某某某</td>
+                                            </tr>
+                                            <tr>
+                                                <th>批准时间：</th>
+                                                <td class="text-dark" contenteditable="true">2024-01-01 00:00</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="watermark"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-20 mb-30">
+                            <a href="javascript:" class="link p-10"">点击返校<i class=" la la-angle-right"></i></a>
+                        </div>
+
+
+                        <style>
+                            .top {
+                                position: relative;
+                                z-index: 1;
+                                text-align: center;
+                                background-color: rgb(236, 236, 235);
+                            }
+
+                            .top p {
+                                color: rgb(21, 21, 21);
+                                line-height: 47px;
+                                font-size: 18px;
+                                position: relative;
+                                left: -14px;
+                            }
+
+                            .close {
+                                position: relative;
+                                float: left;
+                                height: 22px;
+                                top: 14px;
+                                left: 15px;
+                            }
+
+                            .other {
+                                position: relative;
+                                float: right;
+                                height: 30px;
+                                top: -52px;
+                                right: 15px;
+                            }
+
+                            .time-table th,
+                            .bottom-table th {
+                                font-weight: normal;
+                                color: #666;
+                                text-align: right;
+                                vertical-align: middle;
+                            }
+
+                            .time-table td {
+                                width: 220px;
+                            }
+
+                            .time-table p {
+                                margin-bottom: 0 !important;
+                            }
+
+                            .time-table {
+                                border-bottom: 1px solid #dee2e6;
+                            }
+
+                            .bottom-table {
+                                width: auto;
+                                font-size: 16px;
+                                text-align: left;
+                                margin: 0 auto;
+                            }
+
+                            #approved_icon {
+                                position: absolute;
+                                right: -15px;
+                                top: -15px;
+                                width: 110px;
+                                z-index: -1;
+                                display: none;
+                            }
+
+                            .bg-light-danger {
+                                background-color: rgba(255, 0, 0, 0.15);
+                            }
+
+                            .bg-light-success {
+                                background-color: #c5ffc5;
+                            }
+
+                            @keyframes stamp {
+                                from {
+                                    right: -90px;
+                                    width: 200px;
+                                    opacity: 0.5;
+                                }
+
+                                to {
+                                    right: -15px;
+                                    width: 110px;
+                                    opacity: 1;
+                                }
+                            }
+
+
+                            #watermark {
+                                position: absolute;
+                                font-size: 5em;
+                                font-weight: bold;
+                                text-align: center;
+                                line-height: 1.2em;
+                                top: 57%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: -1;
+                                color: rgba(0, 0, 0, 0.08);
+                            }
+                        </style>
+                        <script>
+                            document.querySelector('.figure-img').addEventListener('click', function () {
+                                var input = document.createElement('input');
+                                input.type = 'file';
+                                input.accept = 'image/*';
+                                input.addEventListener('change', function (e) {
+                                    var file = e.target.files[0];
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        document.querySelector('.figure-img').src = e.target.result;
+                                    }
+                                    reader.readAsDataURL(file);
+                                });
+                                input.click();
+                            });
+                        </script>
+                        <script>
+                            $('#approved_icon').css({
+                                animation: '0.3s ease-in stamp'
+                            }).show();
+
+                            var $w = $('#watermark');
+                            var $wt = 57;
+                            var $ws = 1;
+
+                            function updateWatermark() {
+                                var d = new Date();
+                                var t = d.toLocaleString();
+                                $w.html(t).css({
+                                    top: $wt + '%'
+                                });
+                                if ($wt > 75) {
+                                    $ws = -1;
+                                } else if ($wt < 57) {
+                                    $ws = 1;
+                                }
+                                $wt += $ws;
+                            }
+                            updateWatermark();
+                            setInterval(updateWatermark, 1000);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //plus.runtime.quit();
+                        mui.plusReady(function () {
+                            //首页返回键处理
+                            //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                            var first = null;
+                            plus.key.addEventListener('backbutton', function () {
+                                //首次按键，提示‘再按一次退出应用’
+                                if (!first) {
+                                    first = new Date().getTime();
+                                    mui.toast('再按一次退出应用');
+                                    setTimeout(function () {
+                                        first = null;
+                                    }, 1000);
+                                } else {
+                                    if (new Date().getTime() - first < 1500) {
+                                        plus.runtime.quit();
+                                    }
+                                }
+                            }, false);
+                        });
+                    }
+                })
+            });
+        });
+
+        //不需要mui.js版本
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //plus.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first < 1500) {
+                                    plus.runtime.quit();
+                                }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        });</script>
+
+</body>
+
+</html>

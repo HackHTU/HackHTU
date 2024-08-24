@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匿名评论区 - Hack HTU</title>
+    <script>
+        window.CUSDIS_LOCALE = {
+            powered_by: '由伟大的 Cusdis 提供支持',
+            post_comment: '发送',
+            loading: '加载中',
+            // comment
+            email: '邮箱（可选，我们只在后台看到您的邮箱）',
+            nickname: '昵称',
+            reply_placeholder: '评论（支持简单 Markdown 语法，图片/文件请使用图床/外链直接贴入，请遵守使用条款，不透露个人信息，经审核后可见）',
+            reply_btn: '回复',
+            sending: '发送中… Ciallo～ (∠・ω< )⌒☆',
+            // reply
+            mod_badge: '主人',
+            // send
+            content_is_required: '哼，内容不能为空',
+            nickname_is_required: '哼，昵称不能为空',
+            comment_has_been_sent:
+                '提交成功，谢谢你的评论喵！',
+        }
+    </script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    iframe {
+        width: 100vw;
+        min-height: 100dvh;
+        overflow-x: hidden;
+    }
+    .work {
+        border: 10px solid;
+    }
+</style>
+
+<body>
+    <div id="cusdis_thread" data-host="https://cusdis.com"
+        data-app-id="c1a10997-d471-456a-a3b0-3fba57f27629" data-page-id="0" data-theme="auto"></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+</body>
+
+</html>

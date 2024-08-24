@@ -1,0 +1,27 @@
+{
+  "background_color": "#fafafa",
+  "description": "欢迎来到Hack HTU，本工具服务于河南师范大学学生（HTUer）。为河师大学生提供一些方便快捷的工具，并提供河师大学生的交流群组。",
+  "dir": "auto",
+  "display": "fullscreen",
+  "name": "Hack HTU",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Hack HTU",
+  "start_url": "/",
+  "theme_color": "#ebebeb",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "id": "app.hackhtu.dev",
+  "lang": "zh",
+  "categories": [
+    "education"
+  ]
+}

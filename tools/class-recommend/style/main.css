@@ -1,0 +1,102 @@
+
+
+/* body css*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-p-weight);
+}
+
+body {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5em;
+}
+
+h1, h2 {
+    font-weight: var(--font-h-weight);
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+form {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 15px;
+}
+
+
+/* form style */
+input[type="text"],
+input[type="range"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--b);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(var(--b), 10%);
+}
+
+footer {
+    width: 80%;
+    border-radius: 50px;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--footer-bg-color);
+    color: var(--secondary-color);
+    margin-top: 20px;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    background-color: var(--nav-bg-color);
+    border-radius: 20px;
+    padding: 0.5em 0;
+    position: sticky;
+    top: 0.5em;
+    color: var(--primary-color);
+    backdrop-filter: var(--blur);
+    z-index: 999;
+}
+
+[class^="card"] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.card2 {
+    display: none;
+}

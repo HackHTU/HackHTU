@@ -1,0 +1,56 @@
+<html lang="zh-CN">
+
+<head>
+    <script src="js/ag-grid-comunity.min.js"></script>
+    <script src="js/index.js" defer></script>
+    <title>校选课推荐 - Hack HTU</title>
+    <link rel="stylesheet" href="/style/vars.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <nav>
+        <h1>校选课评价收集表</h1>
+    </nav>
+
+    <div class="card1">
+        <h2>历年校选课汇总</h2>
+        <p>首先，您需要查找在本年的某一校选课课程，并点击该行最左侧的按钮。</p>
+        <p>您可以点击表头旁的筛选或排序按钮快速找到某行，<strong>请注意开课时间是否为当前学期</strong>。</p>
+        <div id="classInfo" class="ag-theme-balham-auto-dark" style="height: 60dvh; width: 100%;"></div>
+    </div>
+
+    <div class="card2">
+        <h2>收集参考意见</h2>
+        <p>然后，下面的表格是根据上面的选择筛选出来的，您可以添加意见或在下方查看其他意见。</p>
+        <form action="" id="addReview" onsubmit="submitReview(event)">
+            <fieldset>
+                <legend>添加新的评价信息</legend>
+
+                <span>课程名称：</span>
+                <input type="text" id="className" placeholder="你当前未选择课程" disabled readonly />
+
+                <input type="hidden" id="classID">
+
+                <label for="attitude">您对本课程的态度：</label>
+                <input type="range" id="attitude" min="-2" max="2" step="1" onchange="updateAttitudeLabel()">
+                <strong id="attitudeLabel">移动滑块以打星</strong>
+                <br><br>
+                <label for="review">您的评价留言：</label>
+                <textarea id="review" rows="4" placeholder="请输入您的评价...（少于100字的纯文本格式）"></textarea>
+            </fieldset>
+            <button type="submit">提交</button>
+        </form>
+
+        <p>下面表格展示了本课程其他的参考意见。</p>
+
+        <div id="classReviews" class="ag-theme-balham-auto-dark" style="height: 30dvh; width: 100%;"></div>
+    </div>
+
+    <!-- <div class="allReview">
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </div> -->
+    <footer>Version Beta, Powered By AG-Grid</footer>
+</body>
+
+</html>
